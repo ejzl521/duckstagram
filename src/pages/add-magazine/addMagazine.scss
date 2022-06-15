@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+.addMagazine-wrapper {
+  .addMagazine-layout-header {
+    text-align: center;
+    color: #282c34;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .addMagazine-layout-contents {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .addMagazine-header{
+    text-align: center;
+    color: darkblue;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    cursor: pointer;
+    &:hover{
+      color: blue;
+    }
+  }
+  .submitButton{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+      color: #ffffff;
+    }
+    .disable-button{
+      background-color: dodgerblue;
+      cursor: not-allowed;
+    }
+    .success-button{
+      font-size: 18px;
+      background-color: cornflowerblue;
+    }
+  }
+  .addMagazine-body {
+    display: flex;
+    margin: 20px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .addMagazine-footer {
+
+  }
+}

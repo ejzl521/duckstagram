@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+.signup-wrapper {
+  font-family: 'Noto Sans KR', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .input-forms {
+    background-color: #ffffff;
+    padding: 70px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    .input-label{
+      font-weight: bold;
+      color: #282c34;
+    }
+    .input-forms-item {
+      padding: 7px 0;
+      input {
+        width: 350px;
+      }
+    .error-message{
+      color: blue;
+      font-weight: bold;
+    }
+    }
+  }
+}

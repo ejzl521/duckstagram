@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+hr {
+  width: 90%;
+}
+
+.card-wrapper {
+  flex-shrink: 0;
+  margin: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  border-radius: 10px;
+  width: 500px;
+  height: 600px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  transition: width 1s, height 1s, box-shadow 1s;
+  cursor: pointer;
+
+  &:hover {
+    width: 510px;
+    height: 610px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+
+  .card-header, .card-footer {
+    width: 90%;
+    padding: 10px 15px;
+    font-weight: bold;
+    display: flex;
+    font-size: 24px;
+    justify-content: space-between;
+  }
+
+  .card-body-text, .card-body-title {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .card-body-title {
+    font-size: 24px;
+    color: #282c34;
+    font-weight: bold;
+  }
+
+  .card-body-1 {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+    .card-body-img {
+      width: 50%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .card-body-contents {
+      width: 45%;
+
+      .card-body-text {
+        overflow: auto;
+        font-size: 18px;
+        font-weight: normal;
+      }
+    }
+
+  }
+
+  .card-body-2 {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 15px;
+
+    .card-body-img {
+      width: 50%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .card-body-contents {
+      width: 45%;
+
+      .card-body-text {
+        overflow: auto;
+        font-size: 18px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .card-body-3 {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+
+    .card-body-img {
+      width: 100%;
+      height: 70%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .card-body-text {
+      overflow: auto;
+      font-size: 18px;
+      font-weight: normal;
+    }
+  }
+}
