@@ -1,3 +1,15 @@
+@media all and (max-width: 1024px) {
+  html{
+    font-size: 90%;
+  }
+}
+@media all and (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+
 body {
   margin: 0;
   padding-top: 160px;
