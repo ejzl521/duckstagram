@@ -50,6 +50,7 @@
 - 서버의 데이터를 변경했을 때, 즉시 화면에 나타나지 않음. ➔ react-query의 mutate로 즉시 최신의 서버 데이터를 화면에 렌더링
 - form-data로 사진 파일과 객체를 보낼 때, 서버에서 form-data의 value로 객체 자체를 받을 수 없음 ➔ JSON.stringfy로 보낸 후 서버에서 다시 객체로 파싱
 - 페이지가 새로고침 될 때마다 atom의 상태가 날라감 ➔ recoil-persist를 이용해서 atom이 웹 스토리지의 상태를 사용
+- state를 사용해서 infinte scroll 구현 시, 좋아요를 눌러도 state엔 좋아요를 누른 데이터를 가진 최신 서버의 데이터가 쌓여있지 않음 ➔ react-query의 useInfiniteQuery를 사용해서 쌓인 데이터를 초기화하고 호출한 페이지만큼 다시 최신 데이터를 
 
 # UX를 많이 고려한 프로젝트
 - UX적 요소를 많이 생각하면서 프로젝트를 진행했다. 
