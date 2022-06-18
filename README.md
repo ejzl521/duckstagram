@@ -1,6 +1,7 @@
 # Duckstagram
 - recoil, react-query를 이용한 반응형 웹사이트 만들기
 ![6](https://user-images.githubusercontent.com/55455103/173968229-b7aa218b-c560-445c-ab51-0e310668e50a.gif)
+![10123](https://user-images.githubusercontent.com/55455103/174459459-0ecd2a9d-2eae-4b48-9d3a-326e82b4ede4.gif)
 
 
 # 주 라이브러리
