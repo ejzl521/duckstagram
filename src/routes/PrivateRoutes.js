@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import { jwtUtils } from "../utils/JwtUtils";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { tokenState } from "../recoil/store";
+import { tokenState } from "../recoil/localStorage/store";
 
 const PrivateRoute = (props) => {
   // 넘어오는 props를 파악하는게 중요.

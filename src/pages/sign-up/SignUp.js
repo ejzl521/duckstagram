@@ -4,7 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { Formik, ErrorMessage } from "formik";
 import "../../pages/sign-up/signUp.scss";
 import "react-toastify/dist/ReactToastify.css";
-import { Button, TextField } from "@material-ui/core";
+import { Button, TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -41,16 +41,22 @@ const SignUp = () => {
         password,
         username,
       });
-      toast.success("회원등록 완료하였습니다. 로그인 하세요😎", {
-        position: "top-center",
-        autoClose: 2000,
-      });
+      toast.success(
+        <h3>
+          회원등록 완료하였습니다.
+          <br /> 로그인 하세요😎
+        </h3>,
+        {
+          position: "top-center",
+          autoClose: 2000,
+        }
+      );
       window.setTimeout(() => {
         navigate("/login");
       }, 2000);
     } catch (e) {
       // 서버에서 받은 에러 메시지 출력
-      toast.error(e.response.data + "😭", {
+      toast.error(<h3>{e.response.data}😭</h3>, {
         position: "top-center",
       });
     }

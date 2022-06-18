@@ -1,0 +1,51 @@
+.my-magazine{
+  position: relative;
+  &:hover{
+    cursor: pointer;
+    .my-magazine-focus{
+      opacity: 0.3;
+    }
+    .my-magazine-fix-delete{
+      opacity: 1;
+    }
+  }
+  .my-magazine-focus{
+    position: relative;
+    z-index: 2;
+    transition: opacity 1s;
+  }
+  .my-magazine-fix-delete {
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ;
+    button {
+      margin: 0 1rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+.modal{
+
+  .modal-title{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem 0;
+  }
+  .modal-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button{
+      font-size: 1.4rem;
+    }
+  }
+}

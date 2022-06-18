@@ -1,7 +1,7 @@
 import "./card.scss";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import api from "../../utils/api";
-import { useMutation, useQueryClient } from "react-query";
+import { useLikeBoardQuery } from "../../react-query/useLikeBoardQuery";
+import { useNavigate } from "react-router-dom";
 
 export const Card = ({
   board_id,
@@ -16,25 +16,8 @@ export const Card = ({
   favoritesList,
   loginUserID,
 }) => {
-  const queryClient = useQueryClient();
-  const { mutate: likeBoardMutation } = useMutation(
-    () => api.post(`http://13.125.145.83/api/board/${board_id}/like`),
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries("board_list");
-      },
-    }
-  );
-
-  const { mutate: dislikeBoardMutation } = useMutation(
-    () => api.delete(`http://13.125.145.83/api/board/${board_id}/like`),
-    {
-      onSuccess: () => {
-        queryClient.invalidateQueries("board_list");
-      },
-    }
-  );
-
+  const { likeBoardMutation, dislikeBoardMutation } = useLikeBoardQuery();
+  const navigate = useNavigate();
   return (
     <div className="card-wrapper">
       <div className="card-header">
@@ -61,19 +44,24 @@ export const Card = ({
               fontSize="large"
               onClick={() => {
                 window.alert("😎로그인이 필요합니다😎");
+                navigate("/login");
               }}
             />
           ) : favoritesList.includes(loginUserID) ? (
             <FavoriteIcon
               sx={{ color: "hotpink" }}
               fontSize="large"
-              onClick={dislikeBoardMutation}
+              onClick={() => {
+                dislikeBoardMutation(board_id);
+              }}
             />
           ) : (
             <FavoriteIcon
               sx={{ color: "gray" }}
               fontSize="large"
-              onClick={likeBoardMutation}
+              onClick={() => {
+                likeBoardMutation(board_id);
+              }}
             />
           )}
         </div>

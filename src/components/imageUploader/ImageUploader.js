@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./imageUploader.scss";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 
 const ImageUploader = ({ preview_URL, setImage }) => {
   let inputRef;

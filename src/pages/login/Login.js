@@ -4,9 +4,9 @@ import { toast, ToastContainer } from "react-toastify";
 import { Formik, ErrorMessage } from "formik";
 import "../sign-up/signUp.scss";
 import "react-toastify/dist/ReactToastify.css";
-import { Button, TextField } from "@material-ui/core";
+import { Button, TextField } from "@mui/material";
 import { useRecoilState } from "recoil";
-import { tokenState } from "../../recoil/store";
+import { tokenState } from "../../recoil/localStorage/store";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 const Login = () => {
@@ -28,6 +28,9 @@ const Login = () => {
       });
       await setToken(data["Access-Token"]);
       const redirectUrl = searchParams.get("redirectUrl");
+      toast.success(<h3>로그인에 성공했습니다</h3>, {
+        position: "top-center",
+      });
       if (redirectUrl) {
         navigate(redirectUrl);
       } else {
@@ -35,11 +38,11 @@ const Login = () => {
       }
     } catch (e) {
       toast.error(
-        <div>
+        <h3>
           로그인에 실패하였습니다!
           <br />
           아이디와 패스워드를 확인해주세요!
-        </div>,
+        </h3>,
         {
           position: "top-center",
         }

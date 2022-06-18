@@ -1,7 +1,7 @@
 import "./header.scss";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import { tokenState } from "../../recoil/store";
+import { tokenState } from "../../recoil/localStorage/store";
 import { useCallback, useEffect, useState } from "react";
 import { jwtUtils } from "../../utils/JwtUtils";
 
@@ -27,9 +27,12 @@ const Header = () => {
       </div>
       <div className="header-menu">
         {isAuth ? (
-          <Link onClick={logout} to="#">
-            로그아웃
-          </Link>
+          <>
+            <Link to="my-magazine">내 게시물</Link>
+            <Link onClick={logout} to="#">
+              로그아웃
+            </Link>
+          </>
         ) : (
           <>
             <Link to="/login">로그인</Link>
