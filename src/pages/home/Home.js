@@ -17,14 +17,17 @@ const Home = () => {
   const [loginUserID, setLoginUserID] = useState(null);
   // 무한스크롤 사용: infiniteQuery, intersection-observer
   // getBoard: data, getNextPage: fetchNextPage, getBoardIsSuccess: isSuccess
-  const { getBoard, getNextPage, getBoardIsSuccess } = useBoardQuery();
+  const { getBoard, getNextPage, getBoardIsSuccess, getNextPageIsPossible } =
+    useBoardQuery();
   const [ref, isView] = useInView();
   useEffect(() => {
+    console.log(getNextPageIsPossible);
     // 맨 마지막 요소를 보고있고 맨 마지막 페이지에서 리턴한 isLast가 false가 아니면
-    if (isView && !getBoard.pages[getBoard.pages.length - 1].isLast) {
+    if (isView && getNextPageIsPossible) {
+      console.log(getBoard);
       getNextPage();
     }
-  }, [isView]);
+  }, [isView, getBoard]);
 
   useEffect(() => {
     // user가 로그인한 상태면 disabled: false
@@ -44,8 +47,8 @@ const Home = () => {
               return board_page.map((item, idx) => {
                 if (
                   // 마지막 요소에 ref 달아주기
-                  getBoard.pages.length - 1 === page_num &&
-                  board_page.length - 1 === idx
+                  page_num === getBoard.pages.length - 1 &&
+                  idx === board_page.length - 1
                 ) {
                   return (
                     // 마지막 요소에 ref 넣기 위해 div로 감싸기
