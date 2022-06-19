@@ -64,4 +64,5 @@
 - eslint & prettier를 사용해서 남과 같이 협업을 할 경우를 고려해 코딩 컨벤션을 맞추었다.
 - github action + S3 조합으로 무중단 CI/CD
 - CSS 프레임워크가 생각보다 별로라 직접 디자인을 다 했음..
+- react-query의 query 인스턴스와 useMutation을 커스텀 훅으로 묶어서 모듈화 ➔ 깔끔한 코드 작성에 
 
