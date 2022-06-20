@@ -5,13 +5,14 @@ import {
   useQueryClient,
 } from "react-query";
 import api from "../utils/api";
+import axios from "axios";
 
 export const useBoardQuery = () => {
   const queryClient = useQueryClient();
 
   // board 가져오기 - infinite scroll 사용
   const getPageBoard = async ({ pageParam = 0 }) => {
-    const res = await api.get(
+    const res = await axios.get(
       `http://13.125.145.83/api/board?page=${pageParam}&size=2`
     );
     return {

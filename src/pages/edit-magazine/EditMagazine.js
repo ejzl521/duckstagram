@@ -5,7 +5,6 @@ import ImageUploader from "../../components/imageUploader/ImageUploader";
 import TextArea from "../../components/textArea/TextArea";
 import { Button } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import { useBoardQuery } from "../../react-query/useBoardQuery";
 import api from "../../utils/api";
 
 const EditMagazine = () => {
@@ -31,8 +30,8 @@ const EditMagazine = () => {
   }, []);
 
   const canSubmit = useCallback(() => {
-    return text !== "" && title !== "" ? true : false;
-  }, [image, title, text]);
+    return layout !== 4 && text !== "" && title !== "" ? true : false;
+  }, [layout, title, text]);
 
   const handleSubmit = useCallback(async () => {
     // 백엔드에 사진 선택 안하면 DB의 사진은 변경하지말고 제목과 내용만 변경하기
