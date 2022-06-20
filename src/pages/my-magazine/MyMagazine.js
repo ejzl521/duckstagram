@@ -4,7 +4,7 @@ import "./myMagazine.scss";
 import { Card } from "../../components/card/Card";
 import { useNavigate } from "react-router-dom";
 import { Button, Dialog, DialogContent, IconButton } from "@mui/material";
-import { useBoardQuery } from "../../react-query/useBoardQuery";
+import { useUserBoardQuery } from "../../react-query/useUserBoardQuery";
 import DisabledByDefaultOutlinedIcon from "@mui/icons-material/DisabledByDefaultOutlined";
 
 const MyMagazine = () => {
@@ -13,7 +13,7 @@ const MyMagazine = () => {
   const [deleteBoardID, setDeleteBoardID] = useState(0);
 
   const { getUserBoard, getUserBoardIsSuccess, deleteUserBoardMutation } =
-    useBoardQuery();
+    useUserBoardQuery();
 
   return (
     <div className="home-wrapper">

@@ -23,7 +23,6 @@ const Home = () => {
   useEffect(() => {
     // 맨 마지막 요소를 보고있고 맨 마지막 페이지에서 리턴한 isLast가 false가 아니면
     if (isView && getNextPageIsPossible) {
-      console.log(getBoard);
       getNextPage();
     }
   }, [isView, getBoard]);
